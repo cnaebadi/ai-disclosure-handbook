@@ -2,7 +2,7 @@
 
 ## What You Should Never Tell an AI — And Why the Real Risk Is Bigger Than You Think
 
-![Cover](assets/cover.png)
+![Cover](assets/cover.jpg)
 
 ### Privacy, Profiling, Shadow Profiling, Local AI, Cloud AI, and the Future of Human Autonomy
 
