@@ -6,13 +6,30 @@
 
 ## Table of Contents
 
-- Overview
-- Cloud AI vs Local AI
-- Profiling
-- Shadow Profiling
-- The Puzzle Theory
-- The Economics of Behavioral Data
-- What Is Our Role?
+1. [Introduction](#introduction)
+2. [The First Mistake: Thinking Privacy Is About Individual Data](#the-first-mistake-thinking-privacy-is-about-individual-data)
+3. [What You Should Never Share With Any AI](#what-you-should-never-share-with-any-ai)
+4. [Cloud AI vs Local AI](#cloud-ai-vs-local-ai)
+5. [The Puzzle Theory](#the-puzzle-theory)
+6. [Profiling](#profiling)
+7. [Shadow Profiling](#shadow-profiling)
+8. [Why AI Changes Everything](#why-ai-changes-everything)
+9. [Profiling Is Not a Theory](#profiling-is-not-a-theory)
+10. [A Historical Example](#a-historical-example)
+11. [The Difference Between Data and Intelligence](#the-difference-between-data-and-intelligence)
+12. [The New Privacy Problem](#the-new-privacy-problem)
+13. [Why Long Conversations Matter](#why-long-conversations-matter)
+14. [The Profile You Never Intended To Build](#the-profile-you-never-intended-to-build)
+15. [The Hidden Value of AI Conversations](#the-hidden-value-of-ai-conversations)
+16. [The Economics of Behavioral Data](#the-economics-of-behavioral-data)
+17. [What Is Actually Safe To Share?](#what-is-actually-safe-to-share)
+18. [A Better Privacy Question](#a-better-privacy-question)
+19. [Are We Witnessing a Historical Inflection Point?](#are-we-witnessing-a-historical-inflection-point)
+20. [What Is Our Role?](#what-is-our-role)
+21. [Author's Note: A Small Paradox](#authors-note-a-small-paradox)
+22. [Final Thought](#final-thought)
+23. [Discussion](#discussion)
+24. [License](#license)
 
 ---
 
