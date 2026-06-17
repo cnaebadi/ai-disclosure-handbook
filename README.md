@@ -4,7 +4,15 @@
 
 ![Cover](assets/cover.jpg)
 
-### Privacy, Profiling, Shadow Profiling, Local AI, Cloud AI, and the Future of Human Autonomy
+## Table of Contents
+
+- Overview
+- Cloud AI vs Local AI
+- Profiling
+- Shadow Profiling
+- The Puzzle Theory
+- The Economics of Behavioral Data
+- What Is Our Role?
 
 ---
 
