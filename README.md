@@ -632,6 +632,14 @@ And in the age of artificial intelligence, that difference may matter more than 
 
 ---
 
+## Discussion
+
+Questions, criticism, corrections, and alternative viewpoints are welcome.
+
+This repository is intended as a starting point for discussion rather than a definitive answer.
+
+---
+
 ## License
 
 This work is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
