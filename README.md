@@ -33,7 +33,7 @@
 
 ---
 
-## Overview
+## Introduction
 
 Most AI privacy advice focuses on secrets:
 
@@ -518,6 +518,33 @@ Nor does it automatically imply safety.
 It simply means the incentives are significant.
 
 And significant incentives deserve scrutiny.
+
+---
+
+# What Is Actually Safe To Share?
+
+There is no universal answer.
+
+But some categories of information are generally lower risk than sensitive, identifying, or behaviorally revealing data.
+
+Examples that are usually safer include:
+
+* General educational questions
+* Concept explanations
+* Rewriting non-confidential text
+* Generating fictional examples
+* Learning new skills
+* Analyzing public or synthetic data
+
+Even then, context matters.
+
+A single general question may reveal very little.
+
+A long sequence of general questions can still form a pattern.
+
+So the issue is not only the type of data.
+
+It is also the overall pattern of interaction.
 
 ---
 
