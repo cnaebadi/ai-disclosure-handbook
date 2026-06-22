@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Documentation</title>
+
+<!-- Markdown parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<style>
+/* =========================
+   Fonts (local)
+========================= */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("./assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("./assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* =========================
+   Theme
+========================= */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666;
+  --card: #f6f6f6;
+  --border: #e5e5e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --text: #e6edf3;
+    --muted: #9aa4af;
+    --card: #161b22;
+    --border: #30363d;
+  }
+}
+
+/* =========================
+   Base layout
+========================= */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button.active {
+  font-weight: 700;
+}
+
+/* =========================
+   Content
+========================= */
+.content {
+  margin-top: 24px;
+  line-height: 1.8;
+}
+
+.content.rtl {
+  direction: rtl;
+  text-align: right;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.content.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Markdown styling */
+h1, h2, h3 {
+  margin-top: 24px;
+}
+
+code {
+  background: var(--card);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+pre {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+a {
+  color: #58a6ff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="title">📄 Docs</div>
+
+    <div class="tabs">
+      <button id="enBtn" class="active">English</button>
+      <button id="faBtn">فارسی</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div id="content" class="content ltr">Loading...</div>
+</div>
+
+<script>
+const content = document.getElementById("content");
+const enBtn = document.getElementById("enBtn");
+const faBtn = document.getElementById("faBtn");
+
+async function load(lang) {
+  const file = lang === "fa"
+    ? "./fa/README.md"
+    : "./README.md";
+
+  const md = await fetch(file).then(r => r.text());
+
+  content.innerHTML = marked.parse(md);
+
+  // direction + font
+  if (lang === "fa") {
+    content.className = "content rtl";
+  } else {
+    content.className = "content ltr";
+  }
+
+  // UI state
+  enBtn.classList.toggle("active", lang === "en");
+  faBtn.classList.toggle("active", lang === "fa");
+
+  // URL state
+  history.replaceState({}, "", "?lang=" + lang);
+
+  // html lang
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+}
+
+// click handlers
+enBtn.onclick = () => load("en");
+faBtn.onclick = () => load("fa");
+
+// auto detect
+const urlLang = new URLSearchParams(location.search).get("lang");
+const browserLang = navigator.language.startsWith("fa") ? "fa" : "en";
+
+load(urlLang || browserLang);
+</script>
+
+</body>
+</html>
